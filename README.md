@@ -1,7 +1,7 @@
 
 # hamster university
 
-![hamster university](/images/hamster-university-01.png)
+![hamster university](/Images/hamster-university-01.png)
 
 This repo contains classroom materials I have developed.
 
