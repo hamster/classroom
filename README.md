@@ -13,4 +13,6 @@ This repo contains classroom materials I have developed.
 
 ## Firmware 102
 
-This class will be presented in Febuaray at the DC801 hackerspace, and will cover getting "Hello World" up and running on an Arduino Uno board without using the Arduino IDE.  Participants should bring an Arduino Uno board, and a laptop.  Material and software will be presented for Windows, but support will be provided for Linux/OSX if you're patient.
+[This class](/Firmware%20102) is aimed at beginners that want to learn how to develop and program an Arduino in a 'novel' way - by not using the Arduino IDE.  The goal is to teach how some of the low level interfacing and programming is handled without the Arduino IDE magicking away all the fun bits.
+
+There is some required hardware for the class - follow the [link](/Firmware%20102) to the class files to learn more.

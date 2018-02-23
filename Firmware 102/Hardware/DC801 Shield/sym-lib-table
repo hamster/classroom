@@ -1,0 +1,3 @@
+(sym_lib_table
+  (lib (name arduino)(type Legacy)(uri "C:/Users/hamster/Documents/Development/classroom/Firmware 102/Hardware/DC801 Shield/arduino-kicad-library/arduino.lib")(options "")(descr ""))
+)
