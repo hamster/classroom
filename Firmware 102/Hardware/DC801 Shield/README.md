@@ -1,8 +1,8 @@
 
 ## DC801 Arduino Shield
 
-![Shield Front](Hardware/DC801%20Shield/images/DC801%20Shield%20Front.png)
-![Shield Back](Hardware/DC801%20Shield/images/DC801%20Shield%20Back.png)
+![Shield Front](/Firmware%20102/Hardware/DC801%20Shield/images/DC801%20Shield%20Front.png)
+![Shield Back](/Firmware%20102/Hardware/DC801%20Shield/images/DC801%20Shield%20Back.png)
 
 
 # BOM
