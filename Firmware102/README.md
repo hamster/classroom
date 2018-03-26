@@ -12,6 +12,7 @@ There is some required hardware for the class:
 1) An Arduino 101.  Clones will probably work as well.  Classroom content was tested on these boards:
  
  [kuman UNO R3 Board ATmega328P](https://www.amazon.com/kuman-Board-ATmega328P-Cable-Arduino/dp/B016D5KOOC)
+ 
  [HiLetgo UNO R3 ATmega328P CH340 Development Board](https://www.amazon.com/HiLetgo-ATmega328P-Development-Compatible-Microcontroller/dp/B01AR7YJ3O)
 
 2) [A DC801 Arduino Shield](/Firmware102/Hardware/DC801%20Shield).  If you signed up for the class in time, you probably got one for free from me.  If not, well - the gerbers are included in this repo, you can order your own, or just fake it with a breadboard.  It's really just some LEDs that let you know that you got it working and a couple of buttons, so nothing fancy other than some bling.
