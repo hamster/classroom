@@ -1,6 +1,10 @@
 
 ## DC801 Arduino Shield
 
+![Shield Front](Hardware/DC801%20Shield/images/DC801%20Shield%20Front.png)
+![Shield Back](Hardware/DC801%20Shield/images/DC801%20Shield%20Back.png)
+
+
 # BOM
 
 Prices/sourcing as of 2/2018
