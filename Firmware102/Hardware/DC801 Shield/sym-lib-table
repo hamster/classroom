@@ -1,3 +1,4 @@
 (sym_lib_table
-  (lib (name arduino)(type Legacy)(uri "C:/Users/hamster/Documents/Development/classroom/Firmware 102/Hardware/DC801 Shield/arduino-kicad-library/arduino.lib")(options "")(descr ""))
+  (lib (name arduino)(type Legacy)(uri "C:/Users/hamster/Documents/Development/classroom/Firmware102/Hardware/DC801 Shield/arduino-kicad-library/arduino.lib")(options "")(descr ""))
+  (lib (name atmega328p)(type Legacy)(uri "C:/Users/hamster/Documents/Development/classroom/Firmware102/Hardware/DC801 Shield/lib_sch/atmega328p.lib")(options "")(descr ""))
 )

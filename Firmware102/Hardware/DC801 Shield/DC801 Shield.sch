@@ -26,7 +26,7 @@ F 3 "https://store.arduino.cc/arduino-uno-rev3" H 6200 7600 60  0001 C CNN
 	1    0    0    -1  
 $EndComp
 $Comp
-L device:LED_ARGB D1
+L Device:LED_ARGB D1
 U 1 1 5A8E3AC3
 P 7820 3000
 F 0 "D1" H 7820 3497 50  0000 C CNN
@@ -37,7 +37,7 @@ F 3 "" H 7820 2950 50  0001 C CNN
 	1    0    0    -1  
 $EndComp
 $Comp
-L device:LED_ARGB D2
+L Device:LED_ARGB D2
 U 1 1 5A8E3B35
 P 7820 3890
 F 0 "D2" H 7820 4387 50  0000 C CNN
@@ -117,7 +117,7 @@ Wire Wire Line
 Wire Wire Line
 	5700 3600 6750 3600
 $Comp
-L device:LED D6
+L Device:LED D6
 U 1 1 5A8ECB4F
 P 7820 5170
 F 0 "D6" H 7811 5295 50  0000 C CNN
@@ -128,7 +128,7 @@ F 3 "" H 7820 5170 50  0001 C CNN
 	1    0    0    -1  
 $EndComp
 $Comp
-L device:LED D5
+L Device:LED D5
 U 1 1 5A8ED122
 P 7820 4910
 F 0 "D5" H 7811 5035 50  0000 C CNN
@@ -139,7 +139,7 @@ F 3 "" H 7820 4910 50  0001 C CNN
 	1    0    0    -1  
 $EndComp
 $Comp
-L device:LED D4
+L Device:LED D4
 U 1 1 5A8ED12F
 P 7820 4650
 F 0 "D4" H 7811 4775 50  0000 C CNN
@@ -150,7 +150,7 @@ F 3 "" H 7820 4650 50  0001 C CNN
 	1    0    0    -1  
 $EndComp
 $Comp
-L device:LED D3
+L Device:LED D3
 U 1 1 5A8ED6F4
 P 7820 4390
 F 0 "D3" H 7811 4515 50  0000 C CNN
@@ -161,7 +161,7 @@ F 3 "" H 7820 4390 50  0001 C CNN
 	1    0    0    -1  
 $EndComp
 $Comp
-L switches:SW_Push SW1
+L Switch:SW_Push SW1
 U 1 1 5A8F652F
 P 6400 1990
 F 0 "SW1" V 6400 1942 50  0000 R CNN
@@ -172,7 +172,7 @@ F 3 "" H 6400 2190 50  0001 C CNN
 	1    0    0    -1  
 $EndComp
 $Comp
-L switches:SW_Push SW2
+L Switch:SW_Push SW2
 U 1 1 5A8F66A8
 P 6390 2360
 F 0 "SW2" V 6390 2312 50  0000 R CNN
@@ -195,7 +195,7 @@ Wire Wire Line
 Wire Wire Line
 	5700 3900 6360 3900
 $Comp
-L device:R R?
+L Device:R R?
 U 1 1 5A8FB17B
 P 7370 4090
 F 0 "R?" V 7290 4090 50  0000 C CNN
@@ -206,7 +206,7 @@ F 3 "" H 7370 4090 50  0001 C CNN
 	0    1    1    0   
 $EndComp
 $Comp
-L device:R R?
+L Device:R R?
 U 1 1 5A8FD190
 P 7370 3890
 F 0 "R?" V 7290 3890 50  0000 C CNN
@@ -217,7 +217,7 @@ F 3 "" H 7370 3890 50  0001 C CNN
 	0    1    1    0   
 $EndComp
 $Comp
-L device:R R?
+L Device:R R?
 U 1 1 5A8FD1EB
 P 7370 3690
 F 0 "R?" V 7290 3690 50  0000 C CNN
@@ -228,7 +228,7 @@ F 3 "" H 7370 3690 50  0001 C CNN
 	0    1    1    0   
 $EndComp
 $Comp
-L device:R R?
+L Device:R R?
 U 1 1 5A8FD31A
 P 7370 3200
 F 0 "R?" V 7290 3200 50  0000 C CNN
@@ -239,7 +239,7 @@ F 3 "" H 7370 3200 50  0001 C CNN
 	0    1    1    0   
 $EndComp
 $Comp
-L device:R R?
+L Device:R R?
 U 1 1 5A8FD320
 P 7370 3000
 F 0 "R?" V 7290 3000 50  0000 C CNN
@@ -250,7 +250,7 @@ F 3 "" H 7370 3000 50  0001 C CNN
 	0    1    1    0   
 $EndComp
 $Comp
-L device:R R?
+L Device:R R?
 U 1 1 5A8FD326
 P 7370 2800
 F 0 "R?" V 7290 2800 50  0000 C CNN
@@ -261,7 +261,7 @@ F 3 "" H 7370 2800 50  0001 C CNN
 	0    1    1    0   
 $EndComp
 $Comp
-L device:R R?
+L Device:R R?
 U 1 1 5A8FDA0B
 P 7370 4390
 F 0 "R?" V 7290 4390 50  0000 C CNN
@@ -272,7 +272,7 @@ F 3 "" H 7370 4390 50  0001 C CNN
 	0    1    1    0   
 $EndComp
 $Comp
-L device:R R?
+L Device:R R?
 U 1 1 5A8FDA85
 P 7370 4650
 F 0 "R?" V 7290 4650 50  0000 C CNN
@@ -283,7 +283,7 @@ F 3 "" H 7370 4650 50  0001 C CNN
 	0    1    1    0   
 $EndComp
 $Comp
-L device:R R?
+L Device:R R?
 U 1 1 5A8FDB11
 P 7370 4910
 F 0 "R?" V 7290 4910 50  0000 C CNN
@@ -294,7 +294,7 @@ F 3 "" H 7370 4910 50  0001 C CNN
 	0    1    1    0   
 $EndComp
 $Comp
-L device:R R?
+L Device:R R?
 U 1 1 5A8FDC69
 P 7370 5170
 F 0 "R?" V 7290 5170 50  0000 C CNN

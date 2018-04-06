@@ -15,17 +15,6 @@ Comment3 ""
 Comment4 ""
 $EndDescr
 $Comp
-L arduino:Arduino_Uno_Shield XA1
-U 1 1 5A8E39B0
-P 4400 3850
-F 0 "XA1" H 4400 5237 60  0000 C CNN
-F 1 "Arduino_Uno_Shield" H 4400 5131 60  0000 C CNN
-F 2 "Arduino:Arduino_Uno_Shield" H 6200 7600 60  0001 C CNN
-F 3 "https://store.arduino.cc/arduino-uno-rev3" H 6200 7600 60  0001 C CNN
-	1    4400 3850
-	1    0    0    -1  
-$EndComp
-$Comp
 L Device:LED_ARGB D1
 U 1 1 5A8E3AC3
 P 7820 3000
@@ -58,42 +47,6 @@ F 3 "" H 8300 2840 50  0001 C CNN
 	1    8300 2840
 	1    0    0    -1  
 $EndComp
-$Comp
-L power:+5V #PWR02
-U 1 1 5A8E58C2
-P 2920 4800
-F 0 "#PWR02" H 2920 4650 50  0001 C CNN
-F 1 "+5V" V 2935 4928 50  0000 L CNN
-F 2 "" H 2920 4800 50  0001 C CNN
-F 3 "" H 2920 4800 50  0001 C CNN
-	1    2920 4800
-	0    -1   -1   0   
-$EndComp
-$Comp
-L power:GNDREF #PWR01
-U 1 1 5A8E5911
-P 2910 4600
-F 0 "#PWR01" H 2910 4350 50  0001 C CNN
-F 1 "GNDREF" H 2915 4427 50  0001 C CNN
-F 2 "" H 2910 4600 50  0001 C CNN
-F 3 "" H 2910 4600 50  0001 C CNN
-	1    2910 4600
-	1    0    0    -1  
-$EndComp
-Wire Wire Line
-	2920 4800 3100 4800
-Wire Wire Line
-	3100 4400 2910 4400
-Wire Wire Line
-	2910 4400 2910 4500
-Wire Wire Line
-	3100 4500 2910 4500
-Connection ~ 2910 4500
-Wire Wire Line
-	2910 4500 2910 4600
-Wire Wire Line
-	3100 4600 2910 4600
-Connection ~ 2910 4600
 Wire Wire Line
 	5700 3000 7020 3000
 Wire Wire Line

@@ -1,0 +1,284 @@
+
+Step5.elf:     file format elf32-avr
+
+Sections:
+Idx Name          Size      VMA       LMA       File off  Algn
+  0 .data         00000000  00800100  00800100  000001d4  2**0
+                  CONTENTS, ALLOC, LOAD, DATA
+  1 .text         00000180  00000000  00000000  00000054  2**1
+                  CONTENTS, ALLOC, LOAD, READONLY, CODE
+  2 .comment      00000030  00000000  00000000  000001d4  2**0
+                  CONTENTS, READONLY
+  3 .note.gnu.avr.deviceinfo 00000040  00000000  00000000  00000204  2**2
+                  CONTENTS, READONLY
+  4 .debug_aranges 00000020  00000000  00000000  00000244  2**0
+                  CONTENTS, READONLY, DEBUGGING
+  5 .debug_info   0000089b  00000000  00000000  00000264  2**0
+                  CONTENTS, READONLY, DEBUGGING
+  6 .debug_abbrev 0000067e  00000000  00000000  00000aff  2**0
+                  CONTENTS, READONLY, DEBUGGING
+  7 .debug_line   00000318  00000000  00000000  0000117d  2**0
+                  CONTENTS, READONLY, DEBUGGING
+  8 .debug_frame  00000024  00000000  00000000  00001498  2**2
+                  CONTENTS, READONLY, DEBUGGING
+  9 .debug_str    000003b5  00000000  00000000  000014bc  2**0
+                  CONTENTS, READONLY, DEBUGGING
+ 10 .debug_loc    00000298  00000000  00000000  00001871  2**0
+                  CONTENTS, READONLY, DEBUGGING
+ 11 .debug_ranges 00000010  00000000  00000000  00001b09  2**0
+                  CONTENTS, READONLY, DEBUGGING
+
+Disassembly of section .text:
+
+00000000 <__vectors>:
+   0:	0c 94 34 00 	jmp	0x68	; 0x68 <__ctors_end>
+   4:	0c 94 3e 00 	jmp	0x7c	; 0x7c <__bad_interrupt>
+   8:	0c 94 3e 00 	jmp	0x7c	; 0x7c <__bad_interrupt>
+   c:	0c 94 3e 00 	jmp	0x7c	; 0x7c <__bad_interrupt>
+  10:	0c 94 3e 00 	jmp	0x7c	; 0x7c <__bad_interrupt>
+  14:	0c 94 3e 00 	jmp	0x7c	; 0x7c <__bad_interrupt>
+  18:	0c 94 3e 00 	jmp	0x7c	; 0x7c <__bad_interrupt>
+  1c:	0c 94 3e 00 	jmp	0x7c	; 0x7c <__bad_interrupt>
+  20:	0c 94 3e 00 	jmp	0x7c	; 0x7c <__bad_interrupt>
+  24:	0c 94 3e 00 	jmp	0x7c	; 0x7c <__bad_interrupt>
+  28:	0c 94 3e 00 	jmp	0x7c	; 0x7c <__bad_interrupt>
+  2c:	0c 94 3e 00 	jmp	0x7c	; 0x7c <__bad_interrupt>
+  30:	0c 94 3e 00 	jmp	0x7c	; 0x7c <__bad_interrupt>
+  34:	0c 94 3e 00 	jmp	0x7c	; 0x7c <__bad_interrupt>
+  38:	0c 94 3e 00 	jmp	0x7c	; 0x7c <__bad_interrupt>
+  3c:	0c 94 3e 00 	jmp	0x7c	; 0x7c <__bad_interrupt>
+  40:	0c 94 3e 00 	jmp	0x7c	; 0x7c <__bad_interrupt>
+  44:	0c 94 3e 00 	jmp	0x7c	; 0x7c <__bad_interrupt>
+  48:	0c 94 3e 00 	jmp	0x7c	; 0x7c <__bad_interrupt>
+  4c:	0c 94 3e 00 	jmp	0x7c	; 0x7c <__bad_interrupt>
+  50:	0c 94 3e 00 	jmp	0x7c	; 0x7c <__bad_interrupt>
+  54:	0c 94 3e 00 	jmp	0x7c	; 0x7c <__bad_interrupt>
+  58:	0c 94 3e 00 	jmp	0x7c	; 0x7c <__bad_interrupt>
+  5c:	0c 94 3e 00 	jmp	0x7c	; 0x7c <__bad_interrupt>
+  60:	0c 94 3e 00 	jmp	0x7c	; 0x7c <__bad_interrupt>
+  64:	0c 94 3e 00 	jmp	0x7c	; 0x7c <__bad_interrupt>
+
+00000068 <__ctors_end>:
+  68:	11 24       	eor	r1, r1
+  6a:	1f be       	out	0x3f, r1	; 63
+  6c:	cf ef       	ldi	r28, 0xFF	; 255
+  6e:	d8 e0       	ldi	r29, 0x08	; 8
+  70:	de bf       	out	0x3e, r29	; 62
+  72:	cd bf       	out	0x3d, r28	; 61
+  74:	0e 94 40 00 	call	0x80	; 0x80 <main>
+  78:	0c 94 be 00 	jmp	0x17c	; 0x17c <_exit>
+
+0000007c <__bad_interrupt>:
+  7c:	0c 94 00 00 	jmp	0	; 0x0 <__vectors>
+
+00000080 <main>:
+#define DELAY	100
+
+int main(void){
+	
+	int currentLED = 0;
+	DDRB = 0x3F;						// Data direction register for Port B - pins 0-5 set to output
+  80:	8f e3       	ldi	r24, 0x3F	; 63
+  82:	84 b9       	out	0x04, r24	; 4
+	PORTB = 0x3F;						// Set pins 0-5 to high
+  84:	85 b9       	out	0x05, r24	; 5
+	
+	DDRD = 0xF0;						// Set top four bits as outputs, and the bottom 4 as inputs
+  86:	80 ef       	ldi	r24, 0xF0	; 240
+  88:	8a b9       	out	0x0a, r24	; 10
+	PORTD = 0xFC;						// Set the top four bits high, and configure the two switch inputs as pullups
+  8a:	8c ef       	ldi	r24, 0xFC	; 252
+  8c:	8b b9       	out	0x0b, r24	; 11
+
+#define DELAY	100
+
+int main(void){
+	
+	int currentLED = 0;
+  8e:	80 e0       	ldi	r24, 0x00	; 0
+  90:	90 e0       	ldi	r25, 0x00	; 0
+	DDRD = 0xF0;						// Set top four bits as outputs, and the bottom 4 as inputs
+	PORTD = 0xFC;						// Set the top four bits high, and configure the two switch inputs as pullups
+	
+    while(1){							// Forever and ever and ever and ...
+			
+		if(C_CHECKBIT(RIGHT_SWITCH) == 0){
+  92:	4b 99       	sbic	0x09, 3	; 9
+  94:	05 c0       	rjmp	.+10     	; 0xa0 <main+0x20>
+			// Right switch is pressed		
+			currentLED++;
+  96:	01 96       	adiw	r24, 0x01	; 1
+			if(currentLED > 3){
+  98:	84 30       	cpi	r24, 0x04	; 4
+  9a:	91 05       	cpc	r25, r1
+  9c:	0c f0       	brlt	.+2      	; 0xa0 <main+0x20>
+  9e:	69 c0       	rjmp	.+210    	; 0x172 <main+0xf2>
+				currentLED = 0;
+			}
+		}
+	
+		if(C_CHECKBIT(LEFT_SWITCH) == 0){
+  a0:	4a 99       	sbic	0x09, 2	; 9
+  a2:	03 c0       	rjmp	.+6      	; 0xaa <main+0x2a>
+			// Left switch is pressed
+			currentLED--;
+  a4:	01 97       	sbiw	r24, 0x01	; 1
+			if(currentLED < 0){
+  a6:	0a f4       	brpl	.+2      	; 0xaa <main+0x2a>
+  a8:	4d c0       	rjmp	.+154    	; 0x144 <main+0xc4>
+				currentLED = 3;
+			}
+		}
+		
+		switch(currentLED){
+  aa:	81 30       	cpi	r24, 0x01	; 1
+  ac:	91 05       	cpc	r25, r1
+  ae:	01 f1       	breq	.+64     	; 0xf0 <main+0x70>
+  b0:	1c f4       	brge	.+6      	; 0xb8 <main+0x38>
+  b2:	00 97       	sbiw	r24, 0x00	; 0
+  b4:	41 f0       	breq	.+16     	; 0xc6 <main+0x46>
+  b6:	ed cf       	rjmp	.-38     	; 0x92 <main+0x12>
+  b8:	82 30       	cpi	r24, 0x02	; 2
+  ba:	91 05       	cpc	r25, r1
+  bc:	71 f1       	breq	.+92     	; 0x11a <main+0x9a>
+  be:	83 30       	cpi	r24, 0x03	; 3
+  c0:	91 05       	cpc	r25, r1
+  c2:	39 f7       	brne	.-50     	; 0x92 <main+0x12>
+  c4:	3f c0       	rjmp	.+126    	; 0x144 <main+0xc4>
+			case 0:
+				C_CLEARBIT(UPPER_RIGHT_YELLOW);
+  c6:	2d 98       	cbi	0x05, 5	; 5
+	#else
+		//round up by default
+		__ticks_dc = (uint32_t)(ceil(fabs(__tmp)));
+	#endif
+
+	__builtin_avr_delay_cycles(__ticks_dc);
+  c8:	2f ef       	ldi	r18, 0xFF	; 255
+  ca:	31 ee       	ldi	r19, 0xE1	; 225
+  cc:	44 e0       	ldi	r20, 0x04	; 4
+  ce:	21 50       	subi	r18, 0x01	; 1
+  d0:	30 40       	sbci	r19, 0x00	; 0
+  d2:	40 40       	sbci	r20, 0x00	; 0
+  d4:	e1 f7       	brne	.-8      	; 0xce <main+0x4e>
+  d6:	00 c0       	rjmp	.+0      	; 0xd8 <main+0x58>
+  d8:	00 00       	nop
+				_delay_ms(DELAY);
+				C_SETBIT(UPPER_RIGHT_YELLOW);
+  da:	2d 9a       	sbi	0x05, 5	; 5
+  dc:	2f ef       	ldi	r18, 0xFF	; 255
+  de:	31 ee       	ldi	r19, 0xE1	; 225
+  e0:	44 e0       	ldi	r20, 0x04	; 4
+  e2:	21 50       	subi	r18, 0x01	; 1
+  e4:	30 40       	sbci	r19, 0x00	; 0
+  e6:	40 40       	sbci	r20, 0x00	; 0
+  e8:	e1 f7       	brne	.-8      	; 0xe2 <main+0x62>
+  ea:	00 c0       	rjmp	.+0      	; 0xec <main+0x6c>
+  ec:	00 00       	nop
+  ee:	d1 cf       	rjmp	.-94     	; 0x92 <main+0x12>
+				_delay_ms(DELAY);
+				break;
+			case 1:
+				C_CLEARBIT(UPPER_LEFT_YELLOW);
+  f0:	2c 98       	cbi	0x05, 4	; 5
+  f2:	2f ef       	ldi	r18, 0xFF	; 255
+  f4:	31 ee       	ldi	r19, 0xE1	; 225
+  f6:	44 e0       	ldi	r20, 0x04	; 4
+  f8:	21 50       	subi	r18, 0x01	; 1
+  fa:	30 40       	sbci	r19, 0x00	; 0
+  fc:	40 40       	sbci	r20, 0x00	; 0
+  fe:	e1 f7       	brne	.-8      	; 0xf8 <main+0x78>
+ 100:	00 c0       	rjmp	.+0      	; 0x102 <main+0x82>
+ 102:	00 00       	nop
+				_delay_ms(DELAY);
+				C_SETBIT(UPPER_LEFT_YELLOW);
+ 104:	2c 9a       	sbi	0x05, 4	; 5
+ 106:	2f ef       	ldi	r18, 0xFF	; 255
+ 108:	31 ee       	ldi	r19, 0xE1	; 225
+ 10a:	44 e0       	ldi	r20, 0x04	; 4
+ 10c:	21 50       	subi	r18, 0x01	; 1
+ 10e:	30 40       	sbci	r19, 0x00	; 0
+ 110:	40 40       	sbci	r20, 0x00	; 0
+ 112:	e1 f7       	brne	.-8      	; 0x10c <main+0x8c>
+ 114:	00 c0       	rjmp	.+0      	; 0x116 <main+0x96>
+ 116:	00 00       	nop
+ 118:	bc cf       	rjmp	.-136    	; 0x92 <main+0x12>
+				_delay_ms(DELAY);
+				break;
+			case 2:
+				C_CLEARBIT(LOWER_LEFT_YELLOW);
+ 11a:	2a 98       	cbi	0x05, 2	; 5
+ 11c:	2f ef       	ldi	r18, 0xFF	; 255
+ 11e:	31 ee       	ldi	r19, 0xE1	; 225
+ 120:	44 e0       	ldi	r20, 0x04	; 4
+ 122:	21 50       	subi	r18, 0x01	; 1
+ 124:	30 40       	sbci	r19, 0x00	; 0
+ 126:	40 40       	sbci	r20, 0x00	; 0
+ 128:	e1 f7       	brne	.-8      	; 0x122 <main+0xa2>
+ 12a:	00 c0       	rjmp	.+0      	; 0x12c <main+0xac>
+ 12c:	00 00       	nop
+				_delay_ms(DELAY);
+				C_SETBIT(LOWER_LEFT_YELLOW);
+ 12e:	2a 9a       	sbi	0x05, 2	; 5
+ 130:	2f ef       	ldi	r18, 0xFF	; 255
+ 132:	31 ee       	ldi	r19, 0xE1	; 225
+ 134:	44 e0       	ldi	r20, 0x04	; 4
+ 136:	21 50       	subi	r18, 0x01	; 1
+ 138:	30 40       	sbci	r19, 0x00	; 0
+ 13a:	40 40       	sbci	r20, 0x00	; 0
+ 13c:	e1 f7       	brne	.-8      	; 0x136 <main+0xb6>
+ 13e:	00 c0       	rjmp	.+0      	; 0x140 <main+0xc0>
+ 140:	00 00       	nop
+ 142:	a7 cf       	rjmp	.-178    	; 0x92 <main+0x12>
+				_delay_ms(DELAY);
+				break;
+			case 3:
+				C_CLEARBIT(LOWER_RIGHT_YELLOW);
+ 144:	2b 98       	cbi	0x05, 3	; 5
+ 146:	8f ef       	ldi	r24, 0xFF	; 255
+ 148:	91 ee       	ldi	r25, 0xE1	; 225
+ 14a:	24 e0       	ldi	r18, 0x04	; 4
+ 14c:	81 50       	subi	r24, 0x01	; 1
+ 14e:	90 40       	sbci	r25, 0x00	; 0
+ 150:	20 40       	sbci	r18, 0x00	; 0
+ 152:	e1 f7       	brne	.-8      	; 0x14c <main+0xcc>
+ 154:	00 c0       	rjmp	.+0      	; 0x156 <main+0xd6>
+ 156:	00 00       	nop
+				_delay_ms(DELAY);
+				C_SETBIT(LOWER_RIGHT_YELLOW);
+ 158:	2b 9a       	sbi	0x05, 3	; 5
+ 15a:	3f ef       	ldi	r19, 0xFF	; 255
+ 15c:	41 ee       	ldi	r20, 0xE1	; 225
+ 15e:	84 e0       	ldi	r24, 0x04	; 4
+ 160:	31 50       	subi	r19, 0x01	; 1
+ 162:	40 40       	sbci	r20, 0x00	; 0
+ 164:	80 40       	sbci	r24, 0x00	; 0
+ 166:	e1 f7       	brne	.-8      	; 0x160 <main+0xe0>
+ 168:	00 c0       	rjmp	.+0      	; 0x16a <main+0xea>
+ 16a:	00 00       	nop
+ 16c:	83 e0       	ldi	r24, 0x03	; 3
+ 16e:	90 e0       	ldi	r25, 0x00	; 0
+ 170:	90 cf       	rjmp	.-224    	; 0x92 <main+0x12>
+			if(currentLED > 3){
+				currentLED = 0;
+			}
+		}
+	
+		if(C_CHECKBIT(LEFT_SWITCH) == 0){
+ 172:	4a 9b       	sbis	0x09, 2	; 9
+ 174:	e7 cf       	rjmp	.-50     	; 0x144 <main+0xc4>
+			
+		if(C_CHECKBIT(RIGHT_SWITCH) == 0){
+			// Right switch is pressed		
+			currentLED++;
+			if(currentLED > 3){
+				currentLED = 0;
+ 176:	80 e0       	ldi	r24, 0x00	; 0
+ 178:	90 e0       	ldi	r25, 0x00	; 0
+ 17a:	97 cf       	rjmp	.-210    	; 0xaa <main+0x2a>
+
+0000017c <_exit>:
+ 17c:	f8 94       	cli
+
+0000017e <__stop_program>:
+ 17e:	ff cf       	rjmp	.-2      	; 0x17e <__stop_program>
