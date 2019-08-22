@@ -1,0 +1,3 @@
+(sym_lib_table
+  (lib (name shitty_addon)(type Legacy)(uri C:/Users/hamster/Documents/Development/shitty_addons/sheep/lib_sch/shitty_addon.lib)(options "")(descr ""))
+)

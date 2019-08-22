@@ -1,0 +1,80 @@
+EESchema Schematic File Version 4
+EELAYER 26 0
+EELAYER END
+$Descr A4 11693 8268
+encoding utf-8
+Sheet 1 1
+Title ""
+Date ""
+Rev ""
+Comp ""
+Comment1 ""
+Comment2 ""
+Comment3 ""
+Comment4 ""
+$EndDescr
+$Comp
+L shitty_addon:SHITTY_ADDON U1
+U 1 1 5B45A76A
+P 5565 3505
+F 0 "U1" H 5565 3842 60  0000 C CNN
+F 1 "SHITTY_ADDON" H 5565 3736 60  0000 C CNN
+F 2 "lib_fp:Badgelife-Shitty-2x2-NotRotated" H 5565 3405 60  0001 C CNN
+F 3 "" H 5565 3405 60  0001 C CNN
+	1    5565 3505
+	1    0    0    -1  
+$EndComp
+$Comp
+L Device:LED D2
+U 1 1 5B45A834
+P 4490 3510
+F 0 "D2" V 4528 3393 50  0000 R CNN
+F 1 "LED" V 4437 3393 50  0000 R CNN
+F 2 "lib_fp:0807-RGB" H 4490 3510 50  0001 C CNN
+F 3 "~" H 4490 3510 50  0001 C CNN
+	1    4490 3510
+	0    -1   -1   0   
+$EndComp
+$Comp
+L Device:R R1
+U 1 1 5B45A8DC
+P 4815 3360
+F 0 "R1" V 4608 3360 50  0000 C CNN
+F 1 "R" V 4699 3360 50  0000 C CNN
+F 2 "Resistor_SMD:R_0805_2012Metric_Pad1.15x1.50mm_HandSolder" V 4745 3360 50  0001 C CNN
+F 3 "~" H 4815 3360 50  0001 C CNN
+	1    4815 3360
+	0    1    1    0   
+$EndComp
+$Comp
+L Device:LED D1
+U 1 1 5B45A955
+P 4110 3510
+F 0 "D1" V 4148 3393 50  0000 R CNN
+F 1 "LED" V 4057 3393 50  0000 R CNN
+F 2 "lib_fp:0807-RGB" H 4110 3510 50  0001 C CNN
+F 3 "~" H 4110 3510 50  0001 C CNN
+	1    4110 3510
+	0    -1   -1   0   
+$EndComp
+Wire Wire Line
+	5165 3455 5165 3360
+Wire Wire Line
+	5165 3360 4965 3360
+Wire Wire Line
+	4665 3360 4490 3360
+Connection ~ 4490 3360
+Wire Wire Line
+	4490 3360 4110 3360
+Wire Wire Line
+	5165 3555 5165 3735
+Wire Wire Line
+	5165 3735 4490 3735
+Wire Wire Line
+	4490 3735 4490 3660
+Wire Wire Line
+	4490 3735 4110 3735
+Wire Wire Line
+	4110 3735 4110 3660
+Connection ~ 4490 3735
+$EndSCHEMATC
