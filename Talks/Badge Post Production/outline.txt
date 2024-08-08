@@ -1,0 +1,60 @@
+Badge post-production
+
+Design is complete, now what?
+
+First, is it really complete?
+- Did you run ERC/DRC?
+- Did you test a proto first?
+- Think about assembly, can you actually make it?
+- Double check packages, can you buy all the parts?
+- Did you give yourself some test points for potential failures?
+
+How many are you going to want to make?
+- Small run - probably make it yourself
+- Medium run - how valuable is your free time?
+- Large run - how many friends do you have?
+
+Building it yourself
+- Do you have space?
+- Did you get quality solder?
+- What tools are you missing?
+- Organization is important
+
+Building with friends
+- Organization is key
+- Building tiny assembly lines
+- Care and feeding of electronics
+
+Factory building
+- Factory part sourcing
+ - Yourself
+ - Via factory
+- Costing
+- Prototypes?
+
+Testing
+- Did you create test firmware?
+- Did you make it testable?
+- What is your process for fixing broken units?
+
+Packaging
+- How will you package these for distribution?
+- Do you need to create artwork?
+- What other goodies do you need?
+ - Lanyards, stickers, etc
+
+Selling
+- Slinging badges out of a backpack
+- Selling online via Tindie
+- Selling online via your own store
+- Selling in the vendor area
+- Shipping vs pick ups
+- Taxes!
+
+Returns and Failures
+- Do you fix on the spot or just swap?
+- Handling upset customers
+
+Feedback for next time
+- Take notes
+- Review with team
